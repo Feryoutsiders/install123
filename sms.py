@@ -17,8 +17,8 @@ banner=("""\033[1;36m
      _  _
    _| || |_  \033[1;32mSEPAM ESEMES (UPDATE)\033[1;36m
   |_  ..  _|
-  |_      _| \033[1;31mContact=>https://t.me/kang_nuubi\033[1;36m
-    |_||_|   \033[1;31mGithub=>https://github.com/KANG-NEWBIE
+  |_      _| \033[1;31mContact=>https://t.me/🔱MAS-FERY🔱\033[1;36m
+    |_||_|   \033[1;31mGithub=>https://github.com/Feryoutsiders
 """)
 
 os.system('clear')
