@@ -7,12 +7,12 @@ class Main:
 
 	def menu(self):
 		print("""
-		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		;       S P A M  S M S      ;
-		;---------------------------;
-		; Author : Kang-newbie      ;
-		; Contact : t.me/kang_nuubi ;
-		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		;       S P A M  S M S          ;
+		;-------------------------------;
+		; Author : 🔱 MAS-FERY 🔱       ;
+		; Contact :ferybagus28@gmail.com;
+		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 1. Spam TRI
 2. Spam Grab
@@ -21,7 +21,7 @@ class Main:
 5. Spam TelkomNyet
 6. Spam Sms Gratis
 """)
-		pilih=int(input('/Kang-newbie: '))
+		pilih=int(input('/🔱MAS-FERY🔱: '))
 		if pilih == 1:
 			import src.sms
 		elif pilih == 2:
@@ -39,7 +39,7 @@ class Main:
 1. Spam TelkomNyet-v1
 2. Spam TelkomNyet-v2
 """)
-			pilihlagi=int(input('/Kang-newbie: '))
+			pilihlagi=int(input('/🔱MAS-FERY🔱: '))
 			if pilihlagi == 1:
 				import src.telnyet
 			elif pilihlagi == 2:
