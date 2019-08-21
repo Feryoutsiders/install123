@@ -1,20 +1,31 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-# Coded by MAS-FERY
-"""
-ngapai bosq? mau recode?
-tinggal pake aja susah amat sih?!
-"""
 
-
+RawBlameHistory
+  
+MAS-FERY🔯
+#🔯jombang_beriman🔯
 
 from requests import Session
 import re, sys
 s = Session()
 
 try:
-	print("SMS Gratis by 🔯MAS-FERY🔯 - 🔯jombang🔯\nGunakan kode negara (ex: 62xxxxx29)")
-	no = int(input("No    : "))
+	print(" esemes gratis dan gak mbayar%s
+ ,_     _‚
+ |\\\___//|	%sAuthor: 🔯MAS-FERY🔯%s
+ |=6   6=|	%sContact: https://085330175310%s
+ \=._Y_.=/	%sGithub: https://github.com/Feryoutsiders%s
+  )  `  (    ,	%sALAMAT: Gedangan_sumobito_jombang%s
+ /       \  ((
+ |       |   ))
+/| |   | |\_//	%sKAREK_NGAWE_AE_KAKEAN_COCOT_COK%s
+\| |._.| |/-`
+ '"'   '"'
+	 %skere_ta_cok_kok_ngawe_sms_Gratis%s
+	 
+	 Gunakan kode negara (ex: 62xxxxx29)")
+	
+	 
+	 no = int(input("No    : "))
 	msg = input("Pesan : ")
 except:
 	print("\n\t* Cek nomermu atau pesanmu! *")
