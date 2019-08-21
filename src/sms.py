@@ -5,40 +5,43 @@
 ngapai bosq? mau recode?
 tinggal pake aja susah amat sih?!
 """
-from multiprocessing.pool import ThreadPool
+
+
+
+from requests import Session
+import re, sys
+s = Session()
+
 try:
-	import os, time, requests, sys
-except ModuleNotFoundError:
-	print("\nSepertinya module requests BELUM Di Install")
-	print("$ pip install requests\n")
-	exit()
+	print("SMS Gratis by 🔯MAS-FERY🔯 - 🔯jombang🔯\nGunakan kode negara (ex: 62xxxxx29)")
+	no = int(input("No    : "))
+	msg = input("Pesan : ")
+except:
+	print("\n\t* Cek nomermu atau pesanmu! *")
+	sys.exit()
 
-banner=("""\033[1;36m
-     _  _
-   _| || |_  \033[1;32mSEPAM ESEMES (UPDATE)\033[1;36m
-  |_  ..  _|
-  |_      _| \033[1;31mContact=>https://ferybagus28@gmail.com
-    |_||_|   \033[1;31mGithub=>https://github.com/Feryoutsiders
-""")
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36',
+    'Referer': 'http://sms.payuterus.biz/alpha/'
+}
 
-os.system('clear')
-print(banner)
-no = input("\033[1;37mMassukan Nomor Target =>\033[1;32m")
-tot = int(input("\033[1;37mJumlah Spam =>\033[1;32m"))
-spam = {'msisdn':no}
-idk = '200'
-def main(arg):
-	try:
-		r = requests.post('https://registrasi.tri.co.id/daftar/generateOTP?',data = spam)
-#		print(r.text)
-		if str(idk) in str(r.text):
-			print("\033[1;32m[+] SUKSES")
-		else:
-			print("\033[1;31m[-] GAGAL")
-	except: pass
+bypass = s.get("http://sms.payuterus.biz/alpha/?a=keluar", headers=headers).text
+key = re.findall(r'value="(\d+)"', bypass)[0]
+jml = re.findall(r'<span>(.*?) = </span>', bypass)[0]
+captcha = eval(jml.replace("x", "*").replace(":", "/"))
 
-jobs = []
-for x in range(tot):
-    jobs.append(x)
-p=ThreadPool(10)
-p.map(main,jobs)
+data = {
+	'nohp':no,
+	'pesan':msg,
+	'captcha':captcha,
+	'key':key
+}
+
+send = s.post("http://sms.payuterus.biz/alpha/send.php", headers=headers, data=data).text
+
+if 'SMS Gratis Telah Dikirim' in send:
+	print(f"\nSukses dikirim! \n[{no}] => {msg}")
+elif 'MAAF....!' in send:
+	print("\n\t* Mohon Tunggu 15 Menit Lagi Untuk Pengiriman Pesan Yang Sama *")
+else:
+	print("\n\t* Gagal dikirim! *")
